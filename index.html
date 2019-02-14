@@ -12013,7 +12013,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[606]:</div>
+<div class="prompt input_prompt">In&nbsp;[624]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">average_rating_by_runtime</span> <span class="o">=</span> <span class="n">title_with_ratings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
@@ -12024,7 +12024,7 @@ div#notebook {
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
     <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&lt;20&quot;</span><span class="p">,</span> <span class="s2">&quot;20-30&quot;</span><span class="p">,</span> <span class="s2">&quot;40-60&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;60&quot;</span><span class="p">],</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">average_rating_by_runtime</span><span class="p">[</span><span class="s2">&quot;averageRating&quot;</span><span class="p">],</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">average_rating_by_runtime</span><span class="p">[</span><span class="s2">&quot;primaryTitle&quot;</span><span class="p">],</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">average_rating_by_runtime</span><span class="p">[</span><span class="s2">&quot;primaryTitle&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Shows&quot;</span><span class="p">,</span>
     <span class="n">textposition</span> <span class="o">=</span> <span class="s1">&#39;auto&#39;</span>
 <span class="p">)]</span>
 
@@ -12057,7 +12057,7 @@ div#notebook {
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="5f6902a0-c600-4597-8acf-db83d7e46255" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5f6902a0-c600-4597-8acf-db83d7e46255", [{"text": [3000.0, 14436.0, 12700.0, 3312.0], "textposition": "auto", "x": ["<20", "20-30", "40-60", ">60"], "y": [6.7961999999999945, 6.874494319756138, 6.857110236220457, 6.582820048309166], "type": "bar", "uid": "a6da0712-309a-11e9-b861-406c8f2f7fd7"}], {"title": "Average Rating by Runtime", "xaxis": {"title": "Runtime"}, "yaxis": {"range": [6.5, 7], "title": "Average Rating"}}, {"showLink": "data605/RatingbyRuntime", "linkText": "Export to plot.ly"})});</script>
+<div id="0e5f9ae5-d97a-45f2-bc13-33024c26b507" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("0e5f9ae5-d97a-45f2-bc13-33024c26b507", [{"text": ["3000 Shows", "14436 Shows", "12700 Shows", "3312 Shows"], "textposition": "auto", "x": ["<20", "20-30", "40-60", ">60"], "y": [6.7961999999999945, 6.874494319756138, 6.857110236220457, 6.582820048309166], "type": "bar", "uid": "6665b65e-30b3-11e9-97be-406c8f2f7fd7"}], {"title": "Average Rating by Runtime", "xaxis": {"title": "Runtime"}, "yaxis": {"range": [6.5, 7], "title": "Average Rating"}}, {"showLink": "data605/RatingbyRuntime", "linkText": "Export to plot.ly"})});</script>
 </div>
 
 </div>
@@ -12065,6 +12065,15 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There does seem to be somewhat of a difference in average rating between the different runtimes although only a 0.3 difference in average between the best and worst. The biggest effect seems to be that &gt;60 minute shows are rated, on average, lower than the others.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
